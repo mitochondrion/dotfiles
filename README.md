@@ -131,6 +131,7 @@ brew install watch
 brew install macvim
 brew install gnu-go
 brew install f3
+brew install testdisk
 
 # Languages
 brew install node
@@ -165,13 +166,13 @@ brew install postgres
 brew install mysql
 brew install redis
 brew install heroku/brew/heroku
-brew cask install docker
-brew install docker
-brew install docker-compose
-brew install docker-machine
-brew install docker-completion
-brew install docker-compose-completion
-brew install docker-machine-completion
+brew cask install docker # Install this instead of all the individual docker packages below
+# brew install docker
+# brew install docker-compose
+# brew install docker-machine
+# brew install docker-completion
+# brew install docker-compose-completion
+# brew install docker-machine-completion
 
 # Desktop apps
 brew cask install iterm2
