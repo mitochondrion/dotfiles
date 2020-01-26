@@ -139,12 +139,21 @@ function colored_git_branch {
   fi
 }
 
+function current_virtualenv {
+  if [ -z "$VIRTUAL_ENV" ]; then
+    return;
+  else
+     echo " ${COLOR_GREEN}(🐍 `basename $VIRTUAL_ENV`)";
+  fi
+}
+
 function set_bash_prompt {
   PS1="\n"
   # timestamp
   PS1+="$COLOR_GREEN|$COLOR_BLUE\t$COLOR_GREEN|"
   # path
   PS1+=" $COLOR_CYAN\w"
+  PS1+="$(current_virtualenv)"
   PS1+="\n"
   # git branch/status
   PS1+="$(colored_git_branch)"
