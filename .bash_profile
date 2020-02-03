@@ -21,7 +21,7 @@ function f() { find . -iname "*$1*" | grep $1; }
 alias ip='curl https://ifconfig.co'
 # alias iip='ifconfig | grep -o "inet \(192\.168\.\d\+\.\d\+\)" | grep -o "192\.168\.\d\+\.\d\+"'
 alias iip='ifconfig | grep "inet " | tail -1 | cut -d " " -f2'
-alias weather='curl wttr.in/nyc'
+alias weather='curl wttr.in/nyc?u'
 alias tag='ctags --tag-relative -R -f ./.git/tags .'
 
 # Docker
