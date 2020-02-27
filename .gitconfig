@@ -27,6 +27,8 @@
   show-stashes = "!function showStashes { \
       git stash list | awk -F: '{ printf \"\\n\\n\\n==========\\n\"; print $0; print \"==========\\n\\n\"; system(\"git stash show -p \" $1); }';  \
   }; showStashes"
+  ; root = !pwd ; this is hacky, use rev-parse
+  root = rev-parse --show-toplevel
 [core]
   pager = less -x4
   editor = /usr/bin/vim
