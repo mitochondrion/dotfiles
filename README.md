@@ -151,6 +151,7 @@ brew install git
 brew install ctags
 brew install gradle
 brew install pgcli
+brew install jq
 brew cask install chromedriver
 brew cask install postman
 brew cask install charles
@@ -168,6 +169,8 @@ brew install postgres
 brew install mysql
 brew install redis
 brew install heroku/brew/heroku
+brew install awscli
+brew cask install google-cloud-sdk
 brew cask install docker # Install this instead of all the individual docker packages below
 # brew install docker
 # brew install docker-compose
