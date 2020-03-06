@@ -180,6 +180,7 @@ brew cask install docker # Install this instead of all the individual docker pac
 # brew install docker-machine-completion
 
 # Desktop apps
+brew cask install keepassxc
 brew cask install iterm2
 brew cask install eqmac
 brew cask install flux
