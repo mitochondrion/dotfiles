@@ -71,3 +71,7 @@ xcuserdata
 ########
 .grunt
 node_modules
+
+# Python #
+##########
+.venv
