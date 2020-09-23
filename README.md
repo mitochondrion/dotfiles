@@ -134,6 +134,7 @@ brew install macvim
 brew install gnu-go
 brew install f3
 brew install testdisk
+brew install mdp
 
 # Languages
 brew install node
