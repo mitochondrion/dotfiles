@@ -1,3 +1,5 @@
+echo '##### BASH_PROFILE #####'
+
 # Default editor is vi which breaks things like crontab
 export EDITOR=vim
 
