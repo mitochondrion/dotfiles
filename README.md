@@ -43,6 +43,12 @@ git clone https://github.com/chriskempson/tomorrow-theme.git ~/.vim/colors/tomor
 cp ~/.vim/colors/tomorrow-theme/vim/colors/*.vim ~/.vim/colors/
 ```
 
+## Setup VSCode
+Fix vim-mode key repeating
+```bash
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+```
+
 ## Setup new OSX install
 Use the below commands to set up a new instance of OSX and the associated tools/applications. Mix and match at your heart's desire!
 
@@ -154,16 +160,16 @@ brew install ctags
 brew install gradle
 brew install pgcli
 brew install jq
-brew cask install chromedriver
-brew cask install postman
-brew cask install charles
-brew cask install rstudio
-brew cask install android-studio
-brew cask install intellij-idea
-brew cask install pycharm-ce
-brew cask install visual-studio-code
-brew cask install ngrok
-brew cask install dbeaver
+brew install chromedriver
+brew install postman
+brew install charles
+brew install rstudio
+brew install android-studio
+brew install intellij-idea
+brew install pycharm-ce
+brew install visual-studio-code
+brew install ngrok
+brew install dbeaver
 # brew install phantomjs # PhantomJs deprecated in favor of headless Chrome/Firefox
 
 # Infrastructure/devops
@@ -172,8 +178,8 @@ brew install mysql
 brew install redis
 brew install heroku/brew/heroku
 brew install awscli
-brew cask install google-cloud-sdk
-brew cask install docker # Install this instead of all the individual docker packages below
+brew install google-cloud-sdk
+brew install docker # Install this instead of all the individual docker packages below
 # brew install docker
 # brew install docker-compose
 # brew install docker-machine
@@ -182,38 +188,42 @@ brew cask install docker # Install this instead of all the individual docker pac
 # brew install docker-machine-completion
 
 # Desktop apps
-brew cask install keepassxc
-brew cask install iterm2
-brew cask install eqmac
-brew cask install flux
-brew cask install google-chrome
-# brew cask install google-chrome-canary
-brew cask install firefox
-brew cask install grandperspective
-brew cask install menumeters
-brew cask install slack
-brew cask install sloth
-brew cask install spotify
-brew cask install sonos
-brew cask install pocket-casts
-brew cask install steam
-brew cask install textmate
-brew cask install vlc
-brew cask install menubar-countdown
-brew cask install accessmenubarapps
-brew cask install imagej
-brew cask install google-earth
-brew cask install chromecast
-brew cask install time-out
-brew cask install whatsapp
-brew cask install MacDown
-brew cask install sabaki
-brew cask install spectacle
-# brew cask install shiftit # Replaced by spectacle. Also I prefer the old Shiftit hotkeys anyway: https://github.com/mitochondrion/dotfiles/raw/master/ShiftIt.app.zip (mirror of https://github.com/downloads/onsi/ShiftIt/ShiftIt.app.zip)
+brew install keepassxc
+brew install iterm2
+brew install eqmac
+brew install flux
+brew install google-chrome
+brew install brave-browser
+# brew install google-chrome-canary
+brew install firefox
+brew install grandperspective
+brew install menumeters
+brew install slack
+brew install sloth
+brew install spotify
+brew install sonos
+brew install pocket-casts
+brew install steam
+brew install textmate
+brew install vlc
+brew install menubar-countdown
+brew install accessmenubarapps
+brew install imagej
+brew install google-earth
+brew install chromecast
+brew install time-out
+brew install whatsapp
+brew install MacDown
+brew install sabaki
+brew install spectacle
+brew install whatsapp
+brew install signal
+brew install discord
+# brew install shiftit # Replaced by spectacle. Also I prefer the old Shiftit hotkeys anyway: https://github.com/mitochondrion/dotfiles/raw/master/ShiftIt.app.zip (mirror of https://github.com/downloads/onsi/ShiftIt/ShiftIt.app.zip)
 
 # Defunct formulae?
-# brew cask install sonos
-# brew cask install wunderlist
+# brew install sonos
+# brew install wunderlist
 
 # Homebrew cleanup
 brew cleanup -s
