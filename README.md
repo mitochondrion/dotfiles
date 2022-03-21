@@ -141,6 +141,7 @@ brew install gnu-go
 brew install f3
 brew install testdisk
 brew install mdp
+brew install expect
 
 # Languages
 brew install node
