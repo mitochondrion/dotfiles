@@ -1,4 +1,5 @@
 [alias]
+  recent = branch --sort=-committerdate
   dif = diff
   dc = diff --cached
   fp = fetch -p
