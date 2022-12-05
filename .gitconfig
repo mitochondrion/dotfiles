@@ -41,3 +41,5 @@
 [user]
   email = mitochondrion@users.noreply.github.com
   name = mitochondrion
+[init]
+  defaultBranch = main
