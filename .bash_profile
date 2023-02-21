@@ -85,6 +85,10 @@ fi
 ### PATH ###
 export PATH=~/.local/bin:$PATH
 
+### GO COMMANDS ###
+export GOPATH="$HOME/go"
+PATH="$GOPATH/bin:$PATH"
+
 ### EXPLAINSHELL ###
 # Open a command in http://explainshell.com/: explain [command]
 # From: https://github.com/schneems/explain_shell
