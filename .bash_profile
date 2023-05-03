@@ -173,4 +173,9 @@ function set_bash_prompt {
 
 PROMPT_COMMAND=set_bash_prompt
 
+# Load user profile file
+if [ -f ~/.profile ]; then
+  . ~/.profile
+fi
+
 # 😃 🍕 🍔 ⚓ ☠  ♠️ ♣️ ♥️ ♦️ ⚜ 💊 ☠ 💎 ⛵️ 🐓 🔥 💥 👉 💩 🌎 🍍 🛡 💡 ✏️ 💾 ⚙ ☢ 🌀 🌐 ▶️ ➡️ 🀄️ 🔴 🔵
