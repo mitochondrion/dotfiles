@@ -24,6 +24,8 @@
   lf = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   ltag = describe --tags --abbrev=0
   lt = git log --tags --simplify-by-decoration
+  ag = "!git log -G\"$1\" --branches --all #"
+
   # OSX (on linux may need to use this syntax: showStashes() {}; showStashes)
   show-stashes = "!function showStashes { \
       git stash list | awk -F: '{ printf \"\\n\\n\\n==========\\n\"; print $0; print \"==========\\n\\n\"; system(\"git stash show -p \" $1); }';  \
