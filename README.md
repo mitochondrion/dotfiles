@@ -231,6 +231,9 @@ brew install discord
 brew cleanup -s
 brew doctor
 
+### Install misc.
+- https://github.com/doersino/vol
+
 ### Install dotfiles
 git clone git@github.com:mitochondrion/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
