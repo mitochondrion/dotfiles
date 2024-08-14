@@ -142,6 +142,7 @@ brew install f3
 brew install testdisk
 brew install mdp
 brew install expect
+brew install brightness
 
 # Languages
 brew install node
