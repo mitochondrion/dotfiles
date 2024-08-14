@@ -35,7 +35,7 @@ git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vi
 git clone https://github.com/sheerun/vim-polyglot.git ~/.vim/bundle/vim-polyglot
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
 git clone https://github.com/rking/ag.vim.git ~/.vim/bundle/ag.vim
-# git clone https://github.com/scrooloose/syntastic ~/.vim/bundle/syntastic # 🐌Removed because Syntastic can make vim unuseably slow
+# git clone https://github.com/scrooloose/syntastic ~/.vim/bundle/syntastic # 🐌 Removed because Syntastic can make vim unuseably slow
 
 # Install Vim colors
 mkdir -p ~/.vim/colors
