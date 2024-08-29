@@ -8,7 +8,6 @@ set tabstop=4
 set shiftwidth=4
 set ruler
 set et
-set ignorecase
 set ch=2  "vim command line height
 syntax on
 set hlsearch
