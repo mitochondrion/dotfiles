@@ -100,6 +100,7 @@ killall Dock
 # Turn on OSX Dark Mode
 
 ### Homebrew
+**TODO: Replace with Brewfile!!!**
 # After installs, search terminal output for “==> Caveats” for post-brew instructions
 #For up-to-date formulae, check https://formulae.brew.sh/
 # For up-to-date cask formulae, check https://github.com/Homebrew/homebrew-cask/tree/master/Casks
@@ -217,7 +218,8 @@ brew install time-out
 brew install whatsapp
 brew install MacDown
 brew install sabaki
-brew install spectacle
+# brew install spectacle
+brew install rectangle
 brew install whatsapp
 brew install signal
 brew install discord
