@@ -103,3 +103,10 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind // to search for visual selection
 """""""""""""""""""""""""""""""""""""""""
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+"""""""""""""""""""""""""""""""""""""""""
+" Use new regex engine to fix slow syntax
+" highlighting for typescript
+"""""""""""""""""""""""""""""""""""""""""
+set re=0
+
