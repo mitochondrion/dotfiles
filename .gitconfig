@@ -8,6 +8,7 @@
   ss = status -s
   co = checkout
   ci = commit
+  force = push origin head --force-with-lease
   amend = commit --amend
   amendall = commit -a --amend
   wip = commit -m "WIPWIPWIPWIPWIPWIPWIPWIP"
