@@ -1,7 +1,11 @@
 [alias]
   recent = branch --sort=-committerdate
+  rh = !git recent | head
   dif = diff
+  difc = diff --color-words
+  diffc = difc
   dc = diff --cached
+  dcc = diff --cached --color-words
   fp = fetch -p
   pr = pull -r
   st = status
