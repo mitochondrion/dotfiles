@@ -143,10 +143,10 @@ function colored_git_branch {
 
   if [[ $git_status =~ $on_branch ]]; then
     local branch=${BASH_REMATCH[1]}
-    echo "$COLOR_GREEN|$(git_status_color)$branch$COLOR_GREEN| "
+    echo "$COLOR_GREEN[$(git_status_color)$branch$COLOR_GREEN]"
   elif [[ $git_status =~ $on_commit ]]; then
-    local commit=${BASH_REMATCH[1]}
-    echo "$COLOR_GREEN|$(git_status_color)$commit$COLOR_GREEN| "
+    local commit=${BASH_REMATCH[1]}]
+    echo "$COLOR_GREEN[$(git_status_color)$commit$COLOR_GREEN]"
   fi
 }
 
@@ -154,8 +154,19 @@ function current_virtualenv {
   if [ -z "$VIRTUAL_ENV" ]; then
     return;
   else
-     echo " ${COLOR_GREEN}(🐍 `basename $VIRTUAL_ENV`)";
+     echo "${COLOR_GREEN}[🐍 `basename $VIRTUAL_ENV`]";
   fi
+}
+
+function suspended_jobs {
+  local stopped=$(jobs -s 2>/dev/null)
+  if [ -z "$stopped" ]; then
+    return
+  fi
+
+  local count=$(echo "$stopped" | wc -l | tr -d ' ')
+  local names=$(echo "$stopped" | awk '{print $NF}' | paste -sd ',' -)
+  echo "${COLOR_RED}[⏸ ${names}]"
 }
 
 function set_bash_prompt {
@@ -168,6 +179,9 @@ function set_bash_prompt {
   PS1+="\n"
   # git branch/status
   PS1+="$(colored_git_branch)"
+  # suspended jobs
+  PS1+="$(suspended_jobs)"
+  PS1+="\n"
   PS1+="🍕 $COLOR_RESET "
 }
 
