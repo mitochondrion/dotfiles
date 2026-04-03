@@ -165,8 +165,8 @@ function suspended_jobs {
   fi
 
   local count=$(echo "$stopped" | wc -l | tr -d ' ')
-  local names=$(echo "$stopped" | awk '{print $NF}' | paste -sd ',' -)
-  echo "${COLOR_RED}[⏸ ${names}]"
+  local names=$(echo "$stopped" | sed 's/.*Stopped\s*//' | awk '{print $1}' | paste -sd ', ' -)
+  echo "${COLOR_GREEN}[${COLOR_RED}⏸ ${names}${COLOR_GREEN}] "
 }
 
 function set_bash_prompt {
