@@ -1,10 +1,20 @@
-echo '##### BASH_PROFILE #####'
+echo '🔥🔥🔥 .bash_profile 🔥🔥🔥'
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv bash)"
+export XDG_DATA_DIRS="/opt/homebrew/share:$XDG_DATA_DIRS"
+
+# Claude Code
+export ENABLE_LSP_TOOL=1
+
+# Rust
+. "$HOME/.cargo/env"
 
 # Default editor is vi which breaks things like crontab
 export EDITOR=vim
 
 # For Java installed via Homebrew
-export JAVA_HOME="$(/usr/libexec/java_home)"
+#export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # Point python to Homebrew python3
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
