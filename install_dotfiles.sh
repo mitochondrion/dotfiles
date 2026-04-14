@@ -5,19 +5,26 @@ set -o pipefail
 
 cd "${0%/*}"
 
-NOW=`date "+%Y%m%d%H%M%S"`
+NOW=$(date "+%Y%m%d%H%M%S")
 
-for DOTFILE in .bash_profile .vimrc .gitconfig .gitignore .ctags
-do
-    # Move existing configs out of the way and add timestamp
-    # On Linux you can add the "mv --backup=t" flag for even more safety, but it's not available on OSX :(
-    [ -f i~/$DOTFILE ] && mv ~/$DOTFILE ~/$DOTFILE.$NOW
+symlink() {
+    local src="$1"
+    local dst="$2"
+    # Back up anything already at the destination (file, symlink, or broken symlink)
+    if [ -e "$dst" ] || [ -L "$dst" ]; then
+        mv "$dst" "$dst.$NOW"
+    fi
+    ln -s "$src" "$dst"
+}
 
-    # Create symlinks to repository dotfiles
-    ln -s $PWD/$DOTFILE ~/$DOTFILE
+for DOTFILE in .bash_profile .vimrc .gitconfig .gitignore .ctags; do
+    symlink "$PWD/$DOTFILE" ~/"$DOTFILE"
 done
+
+symlink "$PWD/Brewfile.mbp2021" ~/Brewfile
 
 # Install Git completion from the official Git repo
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 
-echo -e "Run the following command to complete installation:\nsource ~/.bash_profile"
+echo "Run the following command to complete installation:"
+echo "source ~/.bash_profile"
