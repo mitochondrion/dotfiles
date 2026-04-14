@@ -17,11 +17,9 @@ symlink() {
     ln -s "$src" "$dst"
 }
 
-for DOTFILE in .bash_profile .vimrc .gitconfig .gitignore .ctags; do
-    symlink "$PWD/$DOTFILE" ~/"$DOTFILE"
+for FILE in .bash_profile .vimrc .gitconfig .gitignore .ctags Brewfile; do
+    symlink "$PWD/$FILE" ~/"$FILE"
 done
-
-symlink "$PWD/Brewfile.mbp2021" ~/Brewfile
 
 # Install Git completion from the official Git repo
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
