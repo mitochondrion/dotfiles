@@ -1,0 +1,8 @@
+# Media tools
+brew "ffmpeg"
+brew "sox"
+brew "speedtest_cli"
+
+cask "spotify"
+cask "vlc"
+cask "sonos"

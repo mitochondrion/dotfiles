@@ -1,0 +1,3 @@
+# Data and analytics tools
+brew "r"
+brew "poppler"

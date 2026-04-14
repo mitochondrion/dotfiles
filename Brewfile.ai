@@ -1,0 +1,8 @@
+# AI tools
+brew "ollama"
+
+cask "claude"
+cask "claude-code"
+cask "chatgpt"
+cask "codex"
+cask "cursor"
