@@ -75,6 +75,9 @@ defaults write NSGlobalDomain KeyRepeat -int 0.02
 # Set a shorter Delay until key repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
+# Turn off char key hold menu
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Turn on three-finger-drag
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
 
