@@ -187,11 +187,12 @@ function set_bash_prompt {
   PS1+=" $COLOR_CYAN\w"
   PS1+="$(current_virtualenv)"
   PS1+="\n"
-  # git branch/status
-  PS1+="$(colored_git_branch)"
-  # suspended jobs
-  PS1+="$(suspended_jobs)"
-  PS1+="\n"
+  # git branch/status + suspended jobs — skip line when both empty
+  local git_branch="$(colored_git_branch)"
+  local jobs="$(suspended_jobs)"
+  if [[ -n "$git_branch" || -n "$jobs" ]]; then
+    PS1+="${git_branch}${jobs}\n"
+  fi
   PS1+="🍕 $COLOR_RESET "
 }
 
