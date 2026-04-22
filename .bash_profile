@@ -14,7 +14,7 @@ export ENABLE_LSP_TOOL=1
 export EDITOR=vim
 
 # For Java installed via Homebrew
-#export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # Point python to Homebrew python3
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
@@ -25,7 +25,7 @@ alias grep='grep --color=auto'
 alias l='ls -lhaFG'
 alias ll='ls -lhaFrtG'
 alias h='history'
-alias gh='history | grep -i $1'
+alias hg='history | grep -i $1'
 alias psef='ps -ef | head -1;  ps -ef | grep -v grep | grep --color=auto -i $1'
 alias d='GLOBIGNORE=.; du -sch *; GLOBIGNORE=; shopt -u dotglob nullglob'
 function f() { find . -iname "*$1*" | grep $1; }
