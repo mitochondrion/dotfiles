@@ -30,6 +30,7 @@ brew "wget"
 brew "hh"
 brew "openssl"
 brew "gpg"
+brew "bat"
 brew "poppler" # Claude Code can't read PDFs without this
 
 # Dev tools
