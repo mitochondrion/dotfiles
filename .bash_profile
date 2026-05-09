@@ -36,6 +36,7 @@ alias iip='ifconfig | grep "inet " | tail -1 | cut -d " " -f2'
 alias weather='curl wttr.in/nyc?u'
 alias tag='ctags --tag-relative -R -f ./.git/tags .'
 alias cdroot='git rev-parse && cd $(git rev-parse --show-toplevel)'
+alias mdt='mdterm'
 
 # Python venv
 alias gitvenv='git rev-parse && GIT_ROOT=$(git rev-parse --show-toplevel); python3 -m venv $GIT_ROOT/.venv/$(basename $GIT_ROOT)'
