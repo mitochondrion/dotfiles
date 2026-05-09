@@ -57,7 +57,7 @@ colored_git_branch() {
 
 # ── Assemble the statusline ───────────────────────────────────────────────
 output=""
-separator=" ${C_GREEN}│${C_RESET} "
+separator=" │ "
 
 # 1. Model
 if [[ -n $model ]]; then
@@ -85,7 +85,7 @@ fi
 output+=$separator
 
 # 5. Current working directory (~ abbreviated)
-display_cwd="${cwd/#$HOME/\~}"
+display_cwd="${cwd/#$HOME/~}"
 output+="${C_CYAN}${display_cwd}${C_RESET}"
 
 # 6. Separator
@@ -94,7 +94,7 @@ output+=$separator
 # 7. Git branch
 branch_seg="$(colored_git_branch "${cwd:-$PWD}")"
 if [[ -n $branch_seg ]]; then
-  output+=" $branch_seg"
+  output+="$branch_seg"
 fi
 
 printf "%b\n" "$output"
