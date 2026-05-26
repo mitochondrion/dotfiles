@@ -21,6 +21,21 @@ for FILE in .bash_profile .vimrc .gitconfig .gitignore .ctags Brewfile; do
     symlink "$PWD/$FILE" ~/"$FILE"
 done
 
+# Install Claude Code status line script
+mkdir -p ~/.claude
+chmod +x "$PWD/.claude/claude-statusline.sh"
+symlink "$PWD/.claude/claude-statusline.sh" ~/.claude/claude-statusline.sh
+
+# Configure Claude Code settings.json with the statusLine key
+CLAUDE_SETTINGS=~/.claude/settings.json
+if [ -f "$CLAUDE_SETTINGS" ]; then
+    jq '.statusLine = {"type": "command", "command": "~/.claude/claude-statusline.sh"}' \
+        "$CLAUDE_SETTINGS" > "$CLAUDE_SETTINGS.tmp" && mv "$CLAUDE_SETTINGS.tmp" "$CLAUDE_SETTINGS"
+else
+    echo '{"statusLine": {"type": "command", "command": "~/.claude/claude-statusline.sh"}}' \
+        > "$CLAUDE_SETTINGS"
+fi
+
 # Install Git completion from the official Git repo
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 
