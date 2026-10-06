@@ -36,6 +36,12 @@ else
         > "$CLAUDE_SETTINGS"
 fi
 
+# Claude Code rules shared across projects. The rest of settings.json (the
+# permissions allowlist) is deliberately NOT tracked; see README.
+for FILE in CLAUDE.md testing-guidelines.md; do
+    symlink "$PWD/.claude/$FILE" ~/.claude/"$FILE"
+done
+
 # Install Git completion from the official Git repo
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 
