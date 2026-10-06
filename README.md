@@ -14,9 +14,9 @@ The install script symlinks `.claude/CLAUDE.md`, `.claude/testing-guidelines.md`
 projects via `@~/.claude/testing-guidelines.md`), and the statusline script into `~/.claude/`.
 
 `~/.claude/settings.json` is intentionally **not** tracked (it holds the permissions allowlist).
-On a new machine, recreate it by hand: the `statusLine` entry (`bash ~/.claude/claude-statusline.sh`),
-`ENABLE_LSP_TOOL=1`, your permissions allowlist, and plugins (`pyright-lsp`, `typescript-lsp`,
-`frontend-design` from `claude-plugins-official`).
+The install script only sets its `statusLine` key (via `jq`). On a new machine, add the rest by
+hand: `ENABLE_LSP_TOOL=1`, your permissions allowlist, and plugins (`pyright-lsp`,
+`typescript-lsp`, `frontend-design` from `claude-plugins-official`).
 
 ## Bash prompt
 Fancy bash prompt (with bonus pizza!) designed for legibility and speed, including timestamp, path, local git branch/status, and current python venv. Git branch status colors explained in below screenshot:
