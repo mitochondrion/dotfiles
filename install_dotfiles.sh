@@ -42,6 +42,13 @@ for FILE in CLAUDE.md testing-guidelines.md; do
     symlink "$PWD/.claude/$FILE" ~/.claude/"$FILE"
 done
 
+# Global Claude Code skills: link each tracked skill folder individually, since
+# ~/.claude/skills also holds skills managed by Claude (e.g. skills/synced).
+mkdir -p ~/.claude/skills
+for DIR in "$PWD"/.claude/skills/*/; do
+    symlink "${DIR%/}" ~/.claude/skills/"$(basename "$DIR")"
+done
+
 # Install Git completion from the official Git repo
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 
