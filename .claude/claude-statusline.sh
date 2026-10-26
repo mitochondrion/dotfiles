@@ -67,12 +67,19 @@ fi
 # 2. Context usage
 if [[ -n $used_pct ]]; then
   local_color="$C_GREEN"
-  if (( $(echo "$used_pct > 75" | bc -l 2>/dev/null) )); then
+  if (( $(echo "$used_pct > 50" | bc -l 2>/dev/null) )); then
     local_color="$C_RED"
-  elif (( $(echo "$used_pct > 50" | bc -l 2>/dev/null) )); then
+  elif (( $(echo "$used_pct > 25" | bc -l 2>/dev/null) )); then
     local_color="$C_YELLOW"
   fi
-  output+=" ${local_color}${used_pct}%${C_RESET}"
+  # Hand-off nudge markers: warning above 25%, double exclamation above 50%.
+  ctx_marker=""
+  if (( $(echo "$used_pct > 50" | bc -l 2>/dev/null) )); then
+    ctx_marker="‼️ "
+  elif (( $(echo "$used_pct > 25" | bc -l 2>/dev/null) )); then
+    ctx_marker="⚠️ "
+  fi
+  output+=" ${ctx_marker}${local_color}${used_pct}%${C_RESET}"
 fi
 
 # 3. Cost
