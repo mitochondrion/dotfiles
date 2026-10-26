@@ -36,3 +36,11 @@ are not.
 
 After every file edit, check LSP diagnostics before considering the task complete.
 If diagnostics report errors, fix them in the same turn.
+
+## Hand-offs
+
+Context cost matters. Offer the `handoff` skill, once per piece of work and in one
+short line, when: the statusline shows ⚠️/‼️ (context above 25%/50%), the user
+starts a side idea or unrelated workstream, or the next step is a subtask that
+needs little of this conversation. Drop it if declined. For a large new topic,
+offer to draft a plan first, then hand off with the plan as the context.
